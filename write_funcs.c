@@ -31,9 +31,9 @@ int _putchar(char c)
   */
 int _puts(char *str)
 {
-	register int index;
+	register int i;
 
-	for (index = 0; str[index] != '\0'; index++)
-		_putchar(str[index]);
-	return (index);
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }
