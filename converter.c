@@ -2,8 +2,9 @@
 
 /**
   *convert - converts number and base into string
-  *@num: number input 
-  *@lowercase: base input 
+  *@num: number input
+  *@lowercase: base input
+  *@base: base
   *Return: return string
   */
 
@@ -13,7 +14,7 @@ char *convert(unsigned long int num, int base, int lowercase)
 	static char buffer[50];
 	char *ptr;
 
-	rep = (lowercase) 
+	rep = (lowercase)
 		? "0123456789abcdef"
 		: "0123456789ABCDEF";
 
@@ -21,11 +22,10 @@ char *convert(unsigned long int num, int base, int lowercase)
 
 	*ptr = '\0';
 
-	do 
-	{
+	do {
 		*--ptr = rep[num % base];
 		num /= base;
-	}while (num != 0);
+	} while (num != 0);
 
 	return (ptr);
 }
