@@ -9,17 +9,16 @@
 int print_int(va_list l, flags_t *f)
 {
 
-	int num = va_arg(l, int);
-	int res = count_digit(num);
+	int n = va_arg(l, int);
+	int res = count_digit(n);
 
-	if (f->space == 1 && f->plus == 0 && num >= 0)
+	if (f->space == 1 && f->plus == 0 && n >= 0)
 		res += _putchar(' ');
-	if (f->plus == 1 && num >= 0)
+	if (f->plus == 1 && n >= 0)
 		res += _putchar('+');
-
-	if (num <= 0)
+	if (n <= 0)
 		res++;
-	print_number(num);
+	print_number(n);
 	return (res);
 }
 
@@ -31,8 +30,8 @@ int print_int(va_list l, flags_t *f)
   */
 int print_unsigned(va_list l, flags_t *f)
 {
-	unsigned int un = va_arg(l, unsigned int);
-	char *str = convert(un, 10, 0);
+	unsigned int u = va_arg(l, unsigned int);
+	char *str = convert(u, 10, 0);
 
 	(void)f;
 	return (_puts(str));
@@ -54,6 +53,7 @@ void print_number(int n)
 	}
 	else
 		num_1 = n;
+
 
 	if (num_1 / 10)
 		print_number(num_1 / 10);
