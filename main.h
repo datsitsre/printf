@@ -12,8 +12,8 @@
   */
 typedef struct flags
 {
-	int space;
 	int plus;
+	int space;
 	int hash;
 } flags_t;
 
@@ -49,7 +49,7 @@ int count_digit(int i);
 char *convert(unsigned long int num, int base, int lowercase);
 
 /* get print */
-int (*get_print(char s))(va_list l, flags_t *);
+int (*get_print(char s))(va_list l, flags_t *f);
 
 /* get flag */
 int get_flag(char s, flags_t *f);
